@@ -2,7 +2,7 @@
 
 Log the power output of the solar panels and the charge controller, and build some stats. [Here is sample dashboard](https://freeboard.io/board/21cDYQ) using data from the logs:
 
-![https://raw.githubusercontent.com/kasparsd/raspi-solar-tracer-logger/master/stats.jpg](Screenshot of the )
+![Solar MPPT Tracer Dashboard](https://raw.githubusercontent.com/kasparsd/raspi-solar-tracer-logger/master/stats.jpg)
 
 Uses [TracerComms software](https://github.com/StereotypicalSquirrel/TracerComms) to read the serial output of the MPPT Tracer and store it in CSV log files. Use the following Cron tasks:
 
