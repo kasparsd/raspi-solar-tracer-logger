@@ -1,6 +1,6 @@
 # EP Solar MPPT Tracer Logger and Stats with Raspberry Pi
 
-Log the power output of the solar panels and the charge controller, and build some stats. [Here is sample dashboard](https://freeboard.io/board/21cDYQ) using data from the logs:
+Log the power output of the solar panels and the charge controller, and build some stats. [Here is a sample dashboard](https://freeboard.io/board/21cDYQ) using data from the logs:
 
 ![Solar MPPT Tracer Dashboard](https://raw.githubusercontent.com/kasparsd/raspi-solar-tracer-logger/master/stats.jpg)
 
