@@ -40,7 +40,7 @@ foreach ( $logs as $log ) {
 		if ( ! isset( $kwh[$day] ) )
 			$kwh[$day] = array();
 
-		end($kwh[$day]);
+		end( $kwh[$day] );
 
 		if ( key( $kwh[$day] ) )
 			$t = $time - key( $kwh[$day] );
@@ -85,7 +85,10 @@ foreach ( $kwh as $day => $power ) {
 		'log' => $extra[ $day ],
 	);
 
-	file_put_contents( 'logs/' . str_replace( '-', '', $day ) . '.json', json_encode( $log, JSON_PRETTY_PRINT ) );
+	file_put_contents(
+		'logs/' . str_replace( '-', '', $day ) . '.json',
+		json_encode( $log, JSON_PRETTY_PRINT )
+	);
 }
 
 ksort($t);
@@ -98,4 +101,7 @@ $r = array(
 	'montly_Wh' => $m
 );
 
-file_put_contents( 'logs/totals.json', json_encode( $r, JSON_PRETTY_PRINT ) );
+file_put_contents(
+	'logs/totals.json',
+	json_encode( $r, JSON_PRETTY_PRINT )
+);
