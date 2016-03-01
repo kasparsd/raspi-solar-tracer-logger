@@ -1,9 +1,5 @@
 <?php
 
-// Your Sparkfun keys
-$keypublic = 'public_key';
-$keyprivate = 'private_key';
-
 // Send all errors to this file
 ini_set( 'error_log', __FILE__ . '.log' );
 
@@ -64,21 +60,9 @@ $latest = array_merge(
 
 $latestwrite = file_put_contents(
 	'logs/latest.json',
-	json_encode( $latest )
+	json_encode( $latest, JSON_PRETTY_PRINT )
 );
 
 if ( ! $latestwrite ) {
 	error_log( 'Tracer failed to log to latest JSON.' );
-}
-
-$send['private_key'] = $keyprivate;
-
-$sent = file_get_contents( sprintf(
-	'https://data.sparkfun.com/input/%s?%s',
-	$keypublic,
-	http_build_query($send)
-) );
-
-if ( ! $sent ) {
-	error_log( 'Log send failed to upload new data.' );
 }
