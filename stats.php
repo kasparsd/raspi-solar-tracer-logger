@@ -29,13 +29,13 @@ foreach ( $logs as $log ) {
 
 	while ( ( $data = fgetcsv($fh) ) !== FALSE ) {
 
-		if ( ! is_array($data) || ! isset( $data[3] ) )
+		if ( ! is_array( $data ) || ! isset( $data[3] ) )
 			continue;
 
 		$time = strtotime( $data[0] );
 		$day = date( 'Y-m-d', $time );
 		$m = date( 'Y-m', $time );
-		$power = $data[2] * $data[3];
+		$power = $data[1] * $data[3];
 
 		if ( ! isset( $kwh[$day] ) )
 			$kwh[$day] = array();
