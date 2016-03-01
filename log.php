@@ -13,7 +13,7 @@ if ( empty( $readings ) ) {
 }
 
 $logwrite = file_put_contents(
-	sprintf( 'logs/%s.csv', date('Ymd') ),
+	sprintf( __DIR__ . '/logs/%s.csv', date('Ymd') ),
 	sprintf( "%s,%s\n", date('c'), $readings ),
 	FILE_APPEND
 );
@@ -59,7 +59,7 @@ $latest = array_merge(
 );
 
 $latestwrite = file_put_contents(
-	'logs/latest.json',
+	__DIR__ . '/logs/latest.json',
 	json_encode( $latest, JSON_PRETTY_PRINT )
 );
 

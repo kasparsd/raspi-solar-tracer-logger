@@ -21,7 +21,7 @@ $keys = array(
 	'charging',
 );
 
-$logs = glob( 'logs/*.csv' );
+$logs = glob( __DIR__ . '/logs/*.csv' );
 
 foreach ( $logs as $log ) {
 
@@ -86,7 +86,7 @@ foreach ( $kwh as $day => $power ) {
 	);
 
 	file_put_contents(
-		'logs/' . str_replace( '-', '', $day ) . '.json',
+		__DIR__ . '/logs/' . str_replace( '-', '', $day ) . '.json',
 		json_encode( $log, JSON_PRETTY_PRINT )
 	);
 }
@@ -102,6 +102,6 @@ $r = array(
 );
 
 file_put_contents(
-	'logs/totals.json',
+	__DIR__ . '/logs/totals.json',
 	json_encode( $r, JSON_PRETTY_PRINT )
 );
