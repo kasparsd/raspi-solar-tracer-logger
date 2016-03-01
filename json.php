@@ -24,4 +24,4 @@ header( 'Content-Type: application/json' );
 echo json_encode( array(
 	'error' => false,
 	'result' => array_combine( $keys, $t )
-) );
+), JSON_PRETTY_PRINT );
