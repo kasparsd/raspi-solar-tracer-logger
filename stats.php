@@ -104,13 +104,13 @@ $r = array(
 );
 
 $day = date( 'Y-m-d' );
-$month = date( 'Y-m' );
-
 if ( isset( $t[ $day ] ) ) {
 	$r[ 'day_Wh' ] = $t[ $day ];
 }
-if ( isset( $t[ $month ] ) ) {
-	$r[ 'month_Wh' ] = $t[ $month ];
+
+$month = date( 'Y-m' );
+if ( isset( $m[ $month ] ) ) {
+	$r[ 'month_Wh' ] = $m[ $month ];
 }
 
 file_put_contents(
