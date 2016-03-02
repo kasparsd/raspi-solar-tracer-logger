@@ -95,11 +95,23 @@ ksort($t);
 ksort($m);
 
 $r = array(
-	'updated' => date('r'),
+	'updated' => date( 'r' ),
+	'day_Wh' => 0,
+	'month_Wh' => 0,
 	'total_Wh' => array_sum( $t ),
 	'daily_Wh' => $t,
 	'montly_Wh' => $m
 );
+
+$day = date( 'Y-m-d' );
+$month = date( 'Y-m' );
+
+if ( isset( $t[ $day ] ) ) {
+	$r[ 'day_Wh' ] = $t[ $day ];
+}
+if ( isset( $t[ $month ] ) ) {
+	$r[ 'month_Wh' ] = $t[ $month ];
+}
 
 file_put_contents(
 	__DIR__ . '/logs/totals.json',
